@@ -1,23 +1,34 @@
-
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { PRODUCTS } from '../constants';
 import { Category, Product } from '../types';
 
 interface ShopProps {
   onAddToCart: (p: Product) => void;
+  searchQuery?: string;
+  onClearSearch?: () => void;
 }
 
-const Shop: React.FC<ShopProps> = ({ onAddToCart }) => {
+const Shop: React.FC<ShopProps> = ({ onAddToCart, searchQuery = '', onClearSearch }) => {
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
-  const [priceRange, setPriceRange] = useState(100);
+  const [priceRange, setPriceRange] = useState(250);
   const [sortBy, setSortBy] = useState('Popular');
 
   const categories = Object.values(Category);
 
   const filteredProducts = useMemo(() => {
     let result = PRODUCTS.filter(p => p.price <= priceRange);
+    
     if (activeCategory) {
       result = result.filter(p => p.category === activeCategory);
+    }
+    
+    if (searchQuery) {
+      const q = searchQuery.toLowerCase();
+      result = result.filter(p => 
+        p.name.toLowerCase().includes(q) || 
+        p.description.toLowerCase().includes(q) ||
+        p.category.toLowerCase().includes(q)
+      );
     }
     
     if (sortBy === 'Price Low') result.sort((a, b) => a.price - b.price);
@@ -25,11 +36,10 @@ const Shop: React.FC<ShopProps> = ({ onAddToCart }) => {
     else if (sortBy === 'Rating') result.sort((a, b) => b.rating - a.rating);
 
     return result;
-  }, [activeCategory, priceRange, sortBy]);
+  }, [activeCategory, priceRange, sortBy, searchQuery]);
 
   return (
     <main className="max-w-7xl mx-auto px-6 py-12">
-      {/* Breadcrumbs */}
       <nav className="flex gap-2 text-sm font-medium text-gray-400 mb-8">
         <a href="#/" className="hover:text-primary transition-colors">Home</a>
         <span>/</span>
@@ -38,8 +48,18 @@ const Shop: React.FC<ShopProps> = ({ onAddToCart }) => {
 
       <div className="flex flex-col md:flex-row justify-between items-end gap-6 mb-12">
         <div>
-          <h1 className="text-5xl font-display mb-4">Shop All Supplements</h1>
+          <h1 className="text-5xl font-display mb-4">
+            {searchQuery ? `Results for "${searchQuery}"` : 'Shop All Supplements'}
+          </h1>
           <p className="text-gray-500 font-medium">Premium nutrients scientifically formulated for your daily vitality.</p>
+          {searchQuery && (
+            <button 
+              onClick={onClearSearch}
+              className="mt-4 text-xs font-bold text-primary flex items-center gap-1 hover:underline"
+            >
+              <span className="material-symbols-outlined text-sm">close</span> Clear search
+            </button>
+          )}
         </div>
         <div className="flex items-center gap-4">
           <span className="text-xs font-bold uppercase tracking-widest opacity-40">Sort by:</span>
@@ -57,7 +77,6 @@ const Shop: React.FC<ShopProps> = ({ onAddToCart }) => {
       </div>
 
       <div className="flex flex-col lg:flex-row gap-12">
-        {/* Sidebar */}
         <aside className="w-full lg:w-64 flex-shrink-0">
           <div className="sticky top-28 space-y-12">
             <div>
@@ -99,20 +118,20 @@ const Shop: React.FC<ShopProps> = ({ onAddToCart }) => {
             </div>
 
             <button 
-              onClick={() => { setActiveCategory(null); setPriceRange(250); }}
+              onClick={() => { setActiveCategory(null); setPriceRange(250); onClearSearch?.(); }}
               className="w-full bg-slate-900 text-white py-4 rounded-xl text-xs font-bold tracking-widest hover:brightness-110 transition-all"
             >
-              CLEAR FILTERS
+              RESET ALL
             </button>
           </div>
         </aside>
 
-        {/* Product Grid */}
         <div className="flex-1">
           {filteredProducts.length === 0 ? (
-            <div className="py-24 text-center">
+            <div className="py-24 text-center bg-white rounded-[2.5rem] border border-gray-100">
               <span className="material-symbols-outlined text-6xl text-gray-200 mb-4">search_off</span>
-              <p className="text-gray-400">No products found matching your filters.</p>
+              <p className="text-gray-400">No products found matching your criteria.</p>
+              <button onClick={() => {setActiveCategory(null); setPriceRange(250); onClearSearch?.();}} className="mt-4 text-primary font-bold">Show all products</button>
             </div>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">

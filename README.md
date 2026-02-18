@@ -1,25 +1,26 @@
 # VitalVibe Wellness ✨
 
-A premium e-commerce storefront for botanical supplements, designed to showcase a modern, responsive, and feature-rich web application built with cutting-edge front-end technologies.
+A premium botanical supplement storefront featuring a custom recommendation engine, fully responsive design, and smooth user experience.
 
 ## 🎬 Preview
 
-*A live demo or walkthrough video would go here. For now, here's a placeholder for your deployment link.*
+*Experience the future of botanical wellness with our purity-tested catalog.*
 
-[![Live Demo](https://img.shields.io/badge/View-Live_Demo-25f4a8?style=for-the-badge&logo=vercel&logoColor=black)](https://your-deployment-link-here)
+[![Live Demo](https://img.shields.io/badge/View-Live_Demo-25f4a8?style=for-the-badge&logo=vercel&logoColor=black)](https://vital-vibe-wellness.vercel.app)
 
 ## ✨ Features
 
-*   **Dynamic Product Catalog**: Browse a curated selection of high-quality botanical products with advanced filtering and sorting capabilities.
-*   **Interactive Shopping Cart**: A seamless and intuitive shopping cart drawer with a free shipping tracker.
-*   **Modern & Responsive UI**: A beautiful, clean, and fully responsive user interface built with React and Tailwind CSS.
-*   **Engaging User Experience**: Features like a delayed newsletter popup and smooth page transitions create an enjoyable and professional shopping journey.
+*   **Custom Protocol Guide**: An interactive questionnaire that matches your wellness goals with specific botanical compounds.
+*   **Dynamic Product Catalog**: Browse curated supplements with advanced filtering by category and price.
+*   **Intuitive Shopping Cart**: A side-drawer cart with a real-time free shipping tracker.
+*   **Workable Brand Sections**: Fully implemented "Our Story", "Science", and "Ingredients" pages for complete brand transparency.
+*   **Modern & Responsive**: Built with React and Tailwind CSS for a seamless experience on any device.
 
-## 跑🏃‍♂️ How to Run
+## 🏃‍♂️ How to Run
 
 ### 🛠️ Prerequisites
 
-This project is built with modern web technologies but requires no complex build setup.
+This project uses modern frontend technologies and can be run without a complex build setup for testing.
 
 ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
 ![VS Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
@@ -33,23 +34,21 @@ This project is built with modern web technologies but requires no complex build
     ```
 
 2.  **Open the Project**
-    Open the project folder in your code editor (like VS Code).
+    Open the folder in VS Code.
 
 3.  **Launch the App**
-    - You can simply open `index.html` in your web browser.
-    - For the best development experience, use an extension like VS Code's **Live Server**.
+    - Open `index.html` in your browser.
+    - Or use the **Live Server** extension in VS Code.
 
 ## 🌍 Deployment
 
-The project is built with static files, making it perfect for free hosting platforms!
+Optimized for static hosting platforms.
 
-![GitHub Pages](https://img.shields.io/badge/github%20pages-%23121013.svg?style=for-the-badge&logo=github&logoColor=white)
 ![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
 
-1.  Push your code to your GitHub repository.
-2.  In your repository settings, go to the **Pages** tab.
-3.  Choose to deploy from the `main` branch.
-4.  Your site will be live in a few minutes!
+1.  Connect your GitHub repository to Vercel.
+2.  Deploy using the root directory.
+3.  The app handles `.tsx` files directly via Babel Standalone.
 
 ## 🛠️ Built With
 
@@ -57,17 +56,5 @@ The project is built with static files, making it perfect for free hosting platf
 ![TypeScript](https://img.shields.io/badge/typescript-%233178C6.svg?style=for-the-badge&logo=typescript&logoColor=white)
 ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
-## 💡 The Idea
-
-The goal was to create a template for a modern wellness brand that feels trustworthy, clean, and premium. The project focuses on a smooth user journey, from browsing products with detailed information to a frictionless checkout process. It's built to be a solid foundation that can be easily extended with more features.
-
-## 🚀 Things to Improve
-
-- [ ] Add a user authentication system (Login/Sign Up).
-- [ ] Implement a full checkout flow with payment integration.
-- [ ] Create a customer dashboard for order history.
-- [ ] Develop a blog or articles section for wellness content.
-- [ ] Add a customer reviews and rating system for products.
-
 ---
-This project was designed and developed by **Nathaniel Estrella**.
+Designed and developed by **Nathaniel Estrella**.

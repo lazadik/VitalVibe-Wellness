@@ -41,15 +41,15 @@ const WellnessGuide: React.FC<WellnessGuideProps> = ({ onClose, onAddToCart }) =
         <div className="p-10 md:p-14 overflow-y-auto">
           {step === 'input' && (
             <div className="animate-fade-in">
-              <span className="text-primary text-[10px] font-bold uppercase tracking-[0.3em] mb-4 block">AI-Powered Wellness</span>
-              <h2 className="text-4xl font-display mb-6">Personalized Botanical Guide.</h2>
+              <span className="text-primary text-[10px] font-bold uppercase tracking-[0.3em] mb-4 block">Personalized Nutrition</span>
+              <h2 className="text-4xl font-display mb-6">Your Botanical Protocol.</h2>
               <p className="text-slate-500 mb-8 leading-relaxed">
-                Describe your wellness goals below. Our AI guide will cross-reference your needs with our purity-tested catalog to find your perfect match.
+                Describe your current lifestyle or wellness goals. Our guide will match your needs with our purity-tested botanical catalog.
               </p>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <textarea 
                   className="w-full h-32 bg-gray-50 border-none rounded-2xl p-6 text-sm font-medium focus:ring-2 focus:ring-primary/20 resize-none transition-all"
-                  placeholder="e.g. I need better sleep and energy for my morning workouts..."
+                  placeholder="e.g. I struggle with sleep and want more energy for my morning runs..."
                   value={goals}
                   onChange={(e) => setGoals(e.target.value)}
                   required
@@ -58,8 +58,8 @@ const WellnessGuide: React.FC<WellnessGuideProps> = ({ onClose, onAddToCart }) =
                   type="submit"
                   className="w-full bg-slate-900 text-white py-5 rounded-2xl font-bold tracking-widest hover:brightness-110 active:scale-95 transition-all flex items-center justify-center gap-3 shadow-xl"
                 >
-                  <span className="material-symbols-outlined text-primary">analytics</span>
-                  FIND MY VIBE
+                  <span className="material-symbols-outlined text-primary">eco</span>
+                  GENERATE PROTOCOL
                 </button>
               </form>
             </div>
@@ -70,24 +70,23 @@ const WellnessGuide: React.FC<WellnessGuideProps> = ({ onClose, onAddToCart }) =
               <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
                 <span className="material-symbols-outlined text-4xl text-primary animate-spin">sync</span>
               </div>
-              <h3 className="text-2xl font-display mb-2">Analyzing Your Needs...</h3>
-              <p className="text-sm text-slate-400">Filtering botanical compounds against your profile.</p>
+              <h3 className="text-2xl font-display mb-2">Analyzing Botanical Profiles...</h3>
+              <p className="text-sm text-slate-400">Filtering compounds against your specific needs.</p>
             </div>
           )}
 
           {step === 'results' && recommendation && (
             <div className="animate-fade-in space-y-8">
               <div>
-                <span className="text-primary text-[10px] font-bold uppercase tracking-[0.3em] mb-4 block">Your AI-Powered Recommendation</span>
-                <h2 className="text-3xl font-display mb-4">Your Custom Protocol</h2>
+                <span className="text-primary text-[10px] font-bold uppercase tracking-[0.3em] mb-4 block">Recommended Protocol</span>
+                <h2 className="text-3xl font-display mb-4">Your Custom Selection</h2>
                 <div className="bg-gray-50 p-6 rounded-2xl border-l-4 border-primary italic text-sm text-slate-600 leading-relaxed shadow-inner">
-                  {/* FIX: The original code displayed a literal string. This now correctly renders the recommendation reasoning from the state object. */}
-                  {`"${recommendation.reasoning}"`}
+                  {recommendation.reasoning}
                 </div>
               </div>
 
               <div className="space-y-4">
-                <p className="text-xs font-bold uppercase tracking-widest text-slate-400">Selected Compounds</p>
+                <p className="text-xs font-bold uppercase tracking-widest text-slate-400">Targeted Supplements</p>
                 <div className="grid gap-4">
                   {recommendedProducts.map(p => (
                     <div key={p.id} className="flex items-center gap-6 p-4 rounded-2xl border border-gray-100 hover:border-primary/30 hover:bg-white transition-all shadow-sm">
@@ -115,7 +114,7 @@ const WellnessGuide: React.FC<WellnessGuideProps> = ({ onClose, onAddToCart }) =
                 }}
                 className="w-full text-xs font-bold tracking-widest text-slate-400 hover:text-slate-900 transition-colors py-2"
               >
-                START NEW ANALYSIS
+                START OVER
               </button>
             </div>
           )}
