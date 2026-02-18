@@ -49,9 +49,9 @@ The design emphasizes purity, clinical precision, and natural aesthetics using a
 
 *   **Frontend Library:** React 19
 *   **Language:** TypeScript
-*   **Styling:** Tailwind CSS (Custom Configuration)
+*   **Styling:** Tailwind CSS (Runtime/CDN for zero-config deployment)
 *   **Icons:** Google Material Symbols
-*   **Build/Runtime:** Babel Standalone (Optimized for zero-config Vercel deployment)
+*   **Build/Runtime:** Babel Standalone (Optimized for Vercel static hosting)
 
 ---
 
@@ -79,11 +79,6 @@ You can run this project locally to explore the code or customize the design.
 3.  **Run the application**
     *   **Option A (Fastest):** Open `index.html` directly in your browser.
     *   **Option B (Recommended):** Use the "Live Server" extension in VS Code.
-    *   **Option C (Dev Mode):**
-        ```bash
-        npm install
-        npm run watch:css
-        ```
 
 ---
 
@@ -101,11 +96,17 @@ VitalVibe-Wellness/
 
 ---
 
-## 👨‍💻 Author
-
-**Nathaniel Estrella**
+## 👨‍💻 Team
 
 <div align="center">
+  <br />
+  <p><strong>Lead Developer</strong></p>
+  <h3>Nathaniel Estrella</h3>
+  <br />
+  
+  <p><strong>Collaborator / Contributor</strong></p>
+  <h4>Julius Magdaleno Matro</h4>
+  
   <br />
   <small>Designed with 🧡 and React.</small>
 </div>

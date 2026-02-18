@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { getBotanicalRecommendation } from '../wellnessLogic';
-import { PRODUCTS } from '../constants';
-import { Product } from '../types';
+import { getBotanicalRecommendation } from '../wellnessLogic.ts';
+import { PRODUCTS } from '../constants.ts';
+import { Product } from '../types.ts';
 
 interface WellnessGuideProps {
   onClose: () => void;

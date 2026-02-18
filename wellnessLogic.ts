@@ -1,5 +1,5 @@
-import { PRODUCTS } from './constants';
-import { Category } from "./types";
+import { PRODUCTS } from './constants.ts';
+import { Category } from "./types.ts";
 
 /**
  * VitalVibe Botanical Recommendation Logic

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NAVIGATION } from '../constants';
+import { NAVIGATION } from '../constants.ts';
 
 interface HeaderProps {
   cartCount: number;

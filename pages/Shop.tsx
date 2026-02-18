@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { PRODUCTS } from '../constants';
-import { Category, Product } from '../types';
+import { PRODUCTS } from '../constants.ts';
+import { Category, Product } from '../types.ts';
 
 interface ShopProps {
   onAddToCart: (p: Product) => void;
@@ -172,7 +172,7 @@ const Shop: React.FC<ShopProps> = ({ onAddToCart, searchQuery = '', onClearSearc
                     <p className="text-slate-500 text-xs leading-relaxed line-clamp-2 font-medium">{p.description}</p>
                     <div className="mt-4 flex items-center justify-between">
                       <span className="text-2xl font-manrope font-extrabold">${p.price.toFixed(2)}</span>
-                      <span className="text-[9px] text-slate-300 font-extrabold uppercase tracking-widest">{p.count}</span>
+                      <span className="text-2xl text-[9px] text-slate-300 font-extrabold uppercase tracking-widest">{p.count}</span>
                     </div>
                   </div>
                 </div>

@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { PRODUCTS } from '../constants';
+import { PRODUCTS } from '../constants.ts';
 
 interface HomeProps {
   onOpenGuide?: () => void;

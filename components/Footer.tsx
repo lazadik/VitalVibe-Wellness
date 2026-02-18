@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { FOOTER_LINKS } from '../constants';
+import { FOOTER_LINKS } from '../constants.ts';
 
 const Footer: React.FC = () => {
   return (
@@ -59,7 +58,7 @@ const Footer: React.FC = () => {
       </div>
       
       <div className="max-w-7xl mx-auto pt-16 mt-16 border-t border-black/5 flex flex-col md:flex-row justify-between text-[10px] opacity-40 uppercase tracking-widest">
-        <p>© 2024 VitalVibe. Designed and Developed by Nathaniel Estrella.</p>
+        <p>© 2024 VitalVibe. Lead Dev: Nathaniel Estrella • Collab: Julius Magdaleno Matro.</p>
         <div className="flex gap-6 mt-4 md:mt-0">
           <a href="#" className="hover:underline">Privacy Policy</a>
           <a href="#" className="hover:underline">Terms of Service</a>

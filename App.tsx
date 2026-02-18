@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Home from './pages/Home';
-import Shop from './pages/Shop';
-import Ingredients from './pages/Ingredients';
-import ProductDetail from './pages/ProductDetail';
-import CartDrawer from './components/CartDrawer';
-import NewsletterPopup from './components/NewsletterPopup';
-import WellnessGuide from './components/WellnessGuide';
-import { Product, CartItem } from './types';
-import { PRODUCTS } from './constants';
+import Header from './components/Header.tsx';
+import Footer from './components/Footer.tsx';
+import Home from './pages/Home.tsx';
+import Shop from './pages/Shop.tsx';
+import Ingredients from './pages/Ingredients.tsx';
+import ProductDetail from './pages/ProductDetail.tsx';
+import CartDrawer from './components/CartDrawer.tsx';
+import NewsletterPopup from './components/NewsletterPopup.tsx';
+import WellnessGuide from './components/WellnessGuide.tsx';
+import { Product, CartItem } from './types.ts';
+import { PRODUCTS } from './constants.ts';
 
 const App: React.FC = () => {
   const [currentHash, setCurrentHash] = useState(window.location.hash || '#/');

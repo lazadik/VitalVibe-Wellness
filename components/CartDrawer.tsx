@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CartItem } from '../types';
+import { CartItem } from '../types.ts';
 
 interface CartDrawerProps {
   isOpen: boolean;
